@@ -1,4 +1,3 @@
-let buttonColors = ["red", "blue", "green", "yellow"];
 let gamePattern = [];
 let userClickedPattern = [];
 let started = false;
@@ -6,6 +5,7 @@ let level = 0;
 function newSequence() {
     userClickedPattern = [];
     let randomNumber = Math.floor(Math.random() * 4);
+    let buttonColors = ["red", "blue", "green", "yellow"];
     let randomChosenColor = buttonColors[randomNumber];
     level ++;
     gamePattern.push(randomChosenColor);
