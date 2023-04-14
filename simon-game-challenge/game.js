@@ -18,14 +18,16 @@ function newSequence() {
 }
 document.querySelectorAll(".btn").forEach(function(pressed) {
     pressed.addEventListener("click", function () {
-    let userChosenColor = this.id;
-    userClickedPattern.push(userChosenColor);
-    playSound(userChosenColor);
-    document.querySelector("#" + userChosenColor).classList.add("pressed");
-    setTimeout(function () {
-    document.querySelector("#" + userChosenColor).classList.remove("pressed");
-    }, 100);
-    checkAnswer(userClickedPattern.length - 1);
+    if (started) {
+        let userChosenColor = this.id;
+        userClickedPattern.push(userChosenColor);
+        playSound(userChosenColor);
+        document.querySelector("#" + userChosenColor).classList.add("pressed");
+        setTimeout(function () {
+        document.querySelector("#" + userChosenColor).classList.remove("pressed");
+        }, 100);
+        checkAnswer(userClickedPattern.length - 1);
+    }
     });
 });
 function playSound(name) {
